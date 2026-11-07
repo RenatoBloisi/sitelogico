@@ -1,46 +1,129 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mestre da Lógica</title> <!--Títulos alternativos: Edulógica || Lógica Educativa || Penso Lógico Existo-->
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</head>
-<body>
-    <header>
 
-    </header>
-    <nav>
-        <p><strong>Mestre da Lógica</strong></p>
-        <div>
-            <a href="index.html">Início</a>
-            <a href="stages.html">Fases</a>
-            <a href="learn.html">Aprender</a>
-            <a href="about.html">Sobre</a>
+    <title>Mestre da Lógica</title>
+
+    <!-- Fonte do site -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho e menu -->
+    <header class="top">
+        <div class="wrap">
+
+            <a class="logo" href="#inicio">
+                Mestre da Lógica
+            </a>
+
+            <!-- Botão do menu hambúrguer -->
+            <button class="iconbtn menu-btn"
+                    id="menuBtn"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="nav">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round">
+
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+
+            </button>
+
+            <!-- Opções do menu -->
+            <nav class="nav" id="nav">
+                <a href="#inicio">Início</a>
+                <a href="#fases">Fases</a>
+                <a href="#aprender">Aprender</a>
+                <a href="#progresso">Meu progresso</a>
+            </nav>
+
+            <!-- Pontuação e tema -->
+            <div class="hud">
+                <div class="xp" id="xp"></div>
+
+                <button class="iconbtn"
+                        id="themeBtn"
+                        data-act="theme"
+                        aria-label="Alternar tema claro e escuro">
+                </button>
+            </div>
+
         </div>
-        <button type="button">Dark Mode</button>
-    </nav>
-    <main>
-        <hr>
-        <section>
-            <h1>Treine seu raciocínio. <span class="brilho"><!--Colorir de Roxo-->Desbloquei novas fases.</span></h1>
-            <p>Aprenda de forma interativa os fundamentos da lógica matemática: proposições, conectivos e tabelas-verdade.</p>
-            <a href="stages.html">Começar agora</a>
-        </section>
-        <aside>
-            <!--Imagem de Fundo Lateral-->
-        </aside>
-        <hr>
-        <article>
-            <div><p>Conteúdo direto e objetivo</p></div>
-            <div><p>Desafios interativos em formato de jogo</p></div>
-            <div><p>Seu progresso sempre salvo</p></div>
-            <div><p>Do básico ao avançado</p></div>
-        </article>
-    </main>
-    <footer>
-        
-    </footer>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="wrap" id="main"></main>
+
+    <!-- Assistente Severino -->
+    <div class="severino" id="severino">
+
+        <div class="panelbot" id="pbot" hidden role="dialog" aria-label="Conversa com a Severino">
+
+            <div class="pb-head">
+                <div id="pbMascot"></div>
+
+                <b>
+                    Severino
+                    <small>Assistente de lógica</small>
+                </b>
+
+                <button class="iconbtn"
+                        data-act="bot"
+                        aria-label="Fechar conversa">
+                    ✕
+                </button>
+            </div>
+
+            <div class="pb-log" id="pbLog" aria-live="polite"></div>
+
+            <div class="pb-chips" id="pbChips"></div>
+
+            <form class="pb-form" id="pbForm" autocomplete="off">
+                <input
+                    id="pbInput"
+                    type="text"
+                    placeholder="Pergunte sobre lógica..."
+                    aria-label="Sua dúvida">
+
+                <button class="btn" type="submit">
+                    Enviar
+                </button>
+            </form>
+
+        </div>
+
+        <div class="bubble" id="bubble" hidden></div>
+
+        <button class="severino-btn"
+                id="severinoBtn"
+                data-act="bot"
+                aria-label="Abrir a severino, assistente de lógica">
+
+            <span id="severinoMascot"></span>
+            <span class="dot" id="severinoDot" hidden></span>
+
+        </button>
+
+    </div>
+
+    <!-- Mensagens do sistema -->
+    <div class="toast" id="toast" hidden></div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+
 </body>
 </html>
